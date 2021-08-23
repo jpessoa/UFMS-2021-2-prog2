@@ -1,4 +1,7 @@
-// Modifica em casa
+/* 
+Modificado em casa
+e depois no trabalho
+*/
 #include <stdio.h>
 
 int main()
