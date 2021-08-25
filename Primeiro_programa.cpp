@@ -6,6 +6,6 @@ e depois no trabalho
 
 int main()
 {
-printf("Programar é bacana!\n");
-return 0;
+    printf("Programar é bacana!\n");
+    return 0;
 }
