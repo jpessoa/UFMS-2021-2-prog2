@@ -48,6 +48,8 @@ int main()
         scanf(" %d", &vetor[i].ano);
     }
 
+    /* Impressão */
+
     for (i = 0; i < n; i++)
     {
         printf("\n");
