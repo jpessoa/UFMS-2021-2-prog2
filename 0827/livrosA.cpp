@@ -1,5 +1,5 @@
 /*
-Inacabado
+>>>> Inacabado
 Aula de 2021-08-27
 Faca um programa que leia um vetor com os dados de N (N <= 10)livros: 
 titulo (maximo de 30 letras), autor (maximo de 30 letras) e ano. 
@@ -62,3 +62,7 @@ int main()
 
 	return 0;
 }
+
+void leitura(tLivro vetor[TAM], int n); 
+
+void listagem(tLivro vetor[TAM], int n, int P);
