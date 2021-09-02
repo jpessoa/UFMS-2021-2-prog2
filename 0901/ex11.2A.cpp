@@ -20,7 +20,7 @@ int* dois_maiores(int n, int v[MAX], int &pr, int&seg)
 			ind_segundo_maior = i;
 
 	}
-	// maior está em v[ind_maior]
+	
 	return &v[ind_maior], &v[ind_segundo_maior];
 }
 
