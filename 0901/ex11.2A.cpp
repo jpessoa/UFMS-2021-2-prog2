@@ -1,12 +1,13 @@
 /*
+>>> Com erro
 Aula de 2021-09-01
-Exemplo do slide
+Exercício do Slide
 https://ava.ufms.br/pluginfile.php/625335/mod_resource/content/0/ponteiros-funcoes-slides-P04.pdf
 */
 #include <stdio.h>
 #define MAX 100
 
-int* dois_maiores(int n, int v[MAX], int &pr, int&seg)
+void dois_maiores(int n, int v[MAX], int &pr, int &seg)
 {
 	int i;
 	int ind_maior = 0; // maior está na posicao 0
@@ -20,8 +21,8 @@ int* dois_maiores(int n, int v[MAX], int &pr, int&seg)
 			ind_segundo_maior = i;
 
 	}
+    
 	
-	return &v[ind_maior], &v[ind_segundo_maior];
 }
 
 int main()
