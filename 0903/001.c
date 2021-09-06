@@ -5,4 +5,13 @@ https://ava.ufms.br/pluginfile.php/625335/mod_resource/content/0/ponteiros-funco
 */
 
 #include <stdio.h>
-#define MAX 100
+#define DIM 10
+
+int main (void)
+{
+    int v[DIM], soma, *p;
+
+    soma = 0;
+    for (p = &v[0]; p <= &v[DIM-1]; p++)
+        soma = soma + *p;
+}
