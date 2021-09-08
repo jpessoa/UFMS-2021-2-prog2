@@ -1,4 +1,5 @@
 /*
+>>> inacabado
 Aula de 2021-09-08
 Exemplo do slide
 https://ava.ufms.br/pluginfile.php/628445/mod_resource/content/0/ptr-e-matrizesA%20-%20P04.pdf
