@@ -5,7 +5,7 @@ https://ava.ufms.br/pluginfile.php/625335/mod_resource/content/0/ponteiros-funco
 */
 
 #include <stdio.h>
-#define DIM 10
+#define DIM 10  // Era 100 mas diminui para 10 
 
 int main (void)
 {
