@@ -9,10 +9,10 @@ int main()
     int i, j, *pi, *pj;
    
     pi = &i; 
-//    *pj = &j; 
+  //  *pj = &j; 
     i = (*pi)+++*pj;
     i = *&*&j; 
-    pj = &*&j; 
+    pj = &*&j;
  
 	return 0;
 }
