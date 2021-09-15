@@ -6,7 +6,7 @@ https://ava.ufms.br/mod/quiz/view.php?id=320938
 Das seguintes afirmações, marque as opções verdadeiras.
 
 a. Os registros (structs) podem conter apenas um tipo de dado.
-Verdadeira
+Verdadeira ??
 
 b. Os registros não podem ser comparados diretamente.
 Falso ???
