@@ -31,36 +31,30 @@ struct {
     //tipoData datacompro;
 } Agenda [DIM];
 
-struct {
-    int mes;
-    int ano;
-} data;
-
-
 int main()
 {
     /* Crie e leia um vetor de 5 estruturas de dados com: compromisso (máximo 60 letras) 
        e data, nesta ordem.       */
-    int i, qtd = 2;
+    int i, qtd = 5;
     for (i = 0; i < qtd; i++)
     {
-        printf("Digite descrição do compromisso: ");
+//        printf("Digite descrição do compromisso: ");
         scanf(" %[^\n]", Agenda[i].compromisso);
 
-        printf("Digite a data no formato DD/MM/AAAA: ");
+//        printf("Digite a data no formato DD/MM/AAAA: ");
         scanf("%d/%d/%d", &Agenda[i].dia, &Agenda[i].mes, &Agenda[i].ano);
 
     }
 
     /* Leia dois inteiros M e A e mostre todos os compromissos do mês M do ano A. Repita o 
        procedimento até ler M = 0.    */
-    int M = 13, A;
+    int M , A;
     while (M != 0)
     {
-        printf("\nInforme um mês (MM) zero para sair: ");
-        scanf("%d", &M);
-        printf("\nInforme um ano (AAAA): ");
-        scanf("%d", &A);
+//        printf("\nInforme um mês (MM/AAAA) 0/0 para sair: ");
+        scanf("%d/%d", &M, &A);
+//        printf("\nInforme um ano (AAAA): ");
+//        scanf("%d", &A);
 
         for (i = 0; i < qtd; i++)
             if (Agenda[i].ano == A && Agenda[i].mes == M)
