@@ -45,3 +45,16 @@ void troca_cliente(Cliente cliente_1, Cliente cliente_2)
     cliente_2 = cliente_aux;
 
 }
+
+/*
+Resposta :
+
+Cliente A
+Nome: Mariana
+CPF: 98765432109
+Cliente VIP.
+Cliente B
+Nome: Joao
+CPF: 01234567891
+Está incorreto, tendo em vista que a função troca_cliente não altera os valores de cliente_A e cliente_B.
+*/
