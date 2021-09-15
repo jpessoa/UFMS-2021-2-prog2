@@ -18,17 +18,16 @@ https://ava.ufms.br/pluginfile.php/577638/mod_resource/content/1/reg-vet-mat.pdf
 
 #include <stdio.h>
 #include<string.h>
-#define MAX 60
+#define MAX 5
 
 struct tipoData{
     int dia, mes, ano;
 };
 
-struct Agenda
-    {
-        char compromisso[MAX];
-        tipoData datacompro;
-    };
+struct {
+    char compromisso;
+    tipoData datacompro;
+} Agenda [MAX];
 
 int main()
 {
