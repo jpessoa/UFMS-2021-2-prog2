@@ -17,25 +17,32 @@ https://ava.ufms.br/pluginfile.php/577638/mod_resource/content/1/reg-vet-mat.pdf
 */
 
 #include <stdio.h>
-#include<string.h>
-#define MAX 5
+#include <string.h>
+#define MAX 60
+#define DIM 100
 
-/*struct tipoData{
+struct tipoData{
     int dia, mes, ano;
-};*/
+};
 
 struct {
-    char compromisso;
+    char compromisso[MAX+1];
     int dia, mes, ano;
     //tipoData datacompro;
-} Agenda [MAX];
+} Agenda [DIM];
+
+struct {
+    int mes;
+    int ano;
+} data;
+
 
 int main()
 {
-    int i, M, A, dcano, dcmes;
     /* Crie e leia um vetor de 5 estruturas de dados com: compromisso (máximo 60 letras) 
        e data, nesta ordem.       */
-    for (i = 0; i < 5; i++)
+    int i, qtd = 2;
+    for (i = 0; i < qtd; i++)
     {
         printf("Digite descrição do compromisso: ");
         scanf(" %[^\n]", Agenda[i].compromisso);
@@ -47,10 +54,17 @@ int main()
 
     /* Leia dois inteiros M e A e mostre todos os compromissos do mês M do ano A. Repita o 
        procedimento até ler M = 0.    */
+    int M = 13, A;
     while (M != 0)
     {
-        printf("\nInforme uma data (MM/AAAA): ");
-        scanf("%d/%d", &dcmes, &dcano);
+        printf("\nInforme um mês (MM) zero para sair: ");
+        scanf("%d", &M);
+        printf("\nInforme um ano (AAAA): ");
+        scanf("%d", &A);
+
+        for (i = 0; i < qtd; i++)
+            if (Agenda[i].ano == A && Agenda[i].mes == M)
+                printf("%s\n", Agenda[i].compromisso);
 
     }
     
