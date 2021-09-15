@@ -16,7 +16,7 @@ Falso
 https://ava.ufms.br/pluginfile.php/577636/mod_resource/content/2/registrosIntroducao.pdf pg.9
 
 d. Os registros (structs) são sempre passadas a funções por meio de chamadas por referência.
-Falso ???
+Talvez, marquei verdadeiro
 
 e. Os registros podem ser atribuídos diretamente.
 Verdadeira
