@@ -20,18 +20,19 @@ https://ava.ufms.br/pluginfile.php/577638/mod_resource/content/1/reg-vet-mat.pdf
 #include<string.h>
 #define MAX 5
 
-struct tipoData{
+/*struct tipoData{
     int dia, mes, ano;
-};
+};*/
 
 struct {
     char compromisso;
-    tipoData datacompro;
+    int dia, mes, ano;
+    //tipoData datacompro;
 } Agenda [MAX];
 
 int main()
 {
-    int i, M, A, datacompro;
+    int i, M, A, dcano, dcmes;
     /* Crie e leia um vetor de 5 estruturas de dados com: compromisso (máximo 60 letras) 
        e data, nesta ordem.       */
     for (i = 0; i < 5; i++)
@@ -40,7 +41,7 @@ int main()
         scanf(" %[^\n]", Agenda[i].compromisso);
 
         printf("Digite a data no formato DD/MM/AAAA: ");
-        scanf("%d/%d/%d", &variavel_dia, &variavel_mes, &variavel_ano);
+        scanf("%d/%d/%d", &Agenda[i].dia, &Agenda[i].mes, &Agenda[i].ano);
 
     }
 
@@ -49,7 +50,7 @@ int main()
     while (M != 0)
     {
         printf("\nInforme uma data (MM/AAAA): ");
-        scanf("%d/%d", &datacompro.mes, &datacompro.ano);
+        scanf("%d/%d", &dcmes, &dcano);
 
     }
     

@@ -9,10 +9,11 @@ a. Os registros (structs) podem conter apenas um tipo de dado.
 Verdadeira
 
 b. Os registros não podem ser comparados diretamente.
-
+Falso ???
 
 c. Os campos de diferentes registros (structs) devem ter nomes exclusivos.
-
+Falso
+https://ava.ufms.br/pluginfile.php/577636/mod_resource/content/2/registrosIntroducao.pdf pg.9
 
 d. Os registros (structs) são sempre passadas a funções por meio de chamadas por referência.
 Falso ???
