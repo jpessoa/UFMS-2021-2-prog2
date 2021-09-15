@@ -24,26 +24,25 @@ int main()
 {
     // Leia do usuário as informações de 5 alunos e armazene em vetor dessa estrutura.
     tAluno aluno[DIM];
-    int i, qtd = 2;
+    int i, qtd = 5;
     char qcurso[MAX+1];
     for (i = 0; i < qtd; i++)
     {
-        printf("\nInforme a matricula: ");
+        //printf("\nInforme a matricula: ");
         scanf("%d", &aluno[i].matricula);
-        printf("Informe o nome: ");
+        //printf("Informe o nome: ");
         scanf(" %[^\n]", aluno[i].nome);
-        printf("Informe o curso: ");
+        //printf("Informe o curso: ");
         scanf(" %[^\n]", aluno[i].curso);
     }
 
     // Em seguida, leia um nome de curso, pesquise e liste todos os alunos (a matrícula e nome) que fazem o curso.
-    printf("\nInforme o curso a ser pesquisado: ");
+    //printf("\nInforme o curso a ser pesquisado: ");
     scanf(" %[^\n]", qcurso);
     
     for (i = 0; i < qtd; i++)
     {
-        //printf("\n%s//%s//%d//%s", qcurso, aluno[i].curso, aluno[i].matricula, aluno[i].nome);
-        if (aluno[i].curso == qcurso)
+        if( strcmp(aluno[i].curso, qcurso) == 0) 
             printf("%d %s\n", aluno[i].matricula, aluno[i].nome);
     }
 
