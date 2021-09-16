@@ -24,3 +24,14 @@ https://ava.ufms.br/pluginfile.php/577636/mod_resource/content/2/registrosIntrod
 
 f. O nome da tag (tipo) de um registro (structs) é opcional.
 Falso ???
+
+-------------------
+Resposta do AVA :
+Sua resposta está parcialmente correta.
+Você selecionou corretamente 1.
+As respostas corretas são:
+O nome da tag (tipo) de um registro (structs) é opcional.,
+
+Os registros não podem ser comparados diretamente.,
+
+Os registros podem ser atribuídos diretamente.
