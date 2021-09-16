@@ -1,6 +1,5 @@
 /*
 Aula de 2021-09-15
-https://ava.ufms.br/pluginfile.php/631834/mod_resource/content/0/somadigitos.cpp
 */
 #include<stdio.h>
 

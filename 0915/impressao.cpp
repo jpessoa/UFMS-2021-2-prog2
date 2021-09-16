@@ -6,7 +6,7 @@ Resposta errada
 */
 #include <stdio.h>
 
-void contadig(int n);
+void impressao(int n);
 
 int main()
 {
@@ -14,17 +14,17 @@ int main()
     scanf("%d", &num);
 	for(i = 1; i <= num; i++)
 	{
-		contadig(i);
+		impressao(i);
 		printf("\n");
 	}
 	return 0;
 }
 
-void contadig(int n)
+void impressao(int n)
 {
 	if(n != 0)
 	{
-		contadig(n -1);
+		impressao(n - 1);
         printf("%d", n);
 	}
 }
