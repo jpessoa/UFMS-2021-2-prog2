@@ -21,7 +21,6 @@ int main()
     o = 5;
     m = func(o);
     printf("\nfunc(5) = %d\n", m);
-
 }
 
 
