@@ -26,8 +26,10 @@ que receba um número inteiro n ≥ 1, imprima o ciclo de n e devolva o comprime
 
 Entrada:
 22
-Resultado:
+Resultado Esperado:
 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1 16
+Resultado obtido:
+22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1 1
 */
 #include <stdio.h>
 
@@ -42,23 +44,31 @@ int main()
     
 int ciclo(int n)
 {
-    
+    int cont = 7;
     // Se n = 1 termina
     if (n == 1)
     {
         printf("%d ", n);
+        // como n = 1 é o último laço então imprime o contador 
+        cont++;
+        printf("\nCont = %d ", cont);
     }
     // Se n é par, divida por 2.
     else if (n%2 == 0) 
     {
         printf("%d ", n);
+        //cont++;
         ciclo(n/2);
+        cont++;
     }
     // Se n é ímpar, multiplique por 3 e some 1.
     else
     {
         printf("%d ", n);
+        //cont++;
         ciclo(n * 3 + 1);
+        cont++;
     }
-return 0;
+    
+    return 0;
 }
