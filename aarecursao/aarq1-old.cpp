@@ -30,35 +30,48 @@ Resultado:
 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1 16
 */
 #include <stdio.h>
-
 int ciclo(int n);
 
 int main()
 {
-    int n;
+    int n, cont;
+    //int cont[] = 0;
     scanf("%d", &n);
     ciclo(n);
+    //printf("%d ", cont[0]);
+
 }
-    
+
 int ciclo(int n)
 {
+    int compciclo = {0};
+    int cont[0];
+    // Se n = 1
     
-    // Se n = 1 termina
     if (n == 1)
     {
+        //printf("\nÉ um: %d", n);
+        printf("->");
         printf("%d ", n);
+        printf("\n\nCC = %d \n", compciclo);
+        return 0;
     }
     // Se n é par, divida por 2.
     else if (n%2 == 0) 
-    {
+	{
+        //printf("\nÉ par: %d", n);
         printf("%d ", n);
+        cont[0] = cont[0] + 1;
+        compciclo ++;
         ciclo(n/2);
-    }
+	}
     // Se n é ímpar, multiplique por 3 e some 1.
     else
     {
+        // printf("\nÉ impar%d", n);
         printf("%d ", n);
+        compciclo ++;
         ciclo(n * 3 + 1);
     }
-return 0;
+    return 0;
 }
