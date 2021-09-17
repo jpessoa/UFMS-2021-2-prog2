@@ -26,8 +26,11 @@ que receba um número inteiro n ≥ 1, imprima o ciclo de n e devolva o comprime
 
 Entrada:
 22
-Resultado:
+Resultado esperado:
 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1 16
+Resultado obtido:
+22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1
+>>>>>> Está faltando uma forma de contar os laços <<<<<<
 */
 #include <stdio.h>
 
@@ -42,7 +45,6 @@ int main()
     
 int ciclo(int n)
 {
-    
     // Se n = 1 termina
     if (n == 1)
     {
