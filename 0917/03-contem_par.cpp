@@ -9,32 +9,34 @@ o vetor contém um número par e False, em caso contrário.
 
 */
 #include <stdio.h>
-bool contem_par(int n, int *V);
+bool lista_pares(int n, int *V, int *Vpar);
 
 int main()
 {
     int i, n, resp;
     scanf("%d", &n);
-    int A[10];
+    int A[20], B[20];
     for (i = 0; i < n; i++)
     {
      scanf("%d", &A[i]);
     }
-    resp = contem_par(n, A);
+    resp = lista_pares(n, A, B);
     printf("\nResult = %d", resp);
 }
 
-bool contem_par(int n, int *V)
+void contem_par(int n, int *V, int *Vpar)
 {
-    int i;
-    
-    for (i = 0; i < n; i++)
+    bool temp;
+    if (n == 0)
     {
-        if (V[i]%2 == 0)
-        {
-            //printf("\nTem par");
-            return true;
-        }
+        printf("Zero");
     }
-    return false;
+    else if (V[n]%2 == 0)
+    {
+        printf("\nTem par %d", V[n]);
+    }
+    else
+    {
+        printf("\nImpar%d", V[n]);
+    }
 }
