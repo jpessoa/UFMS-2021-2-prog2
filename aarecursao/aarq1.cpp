@@ -44,7 +44,9 @@ int main()
     
 int ciclo(int n)
 {
-    int cont = 7;
+    // contador de comprimento do ciclo
+    int cont = 1;
+
     // Se n = 1 termina
     if (n == 1)
     {
