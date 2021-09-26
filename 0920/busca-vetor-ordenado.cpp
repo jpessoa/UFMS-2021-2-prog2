@@ -10,8 +10,9 @@ e devolve um índice k em [0, n] tal que v[k-1] < x <= v[k]
 #include <stdio.h>
 #define MAX 3
 
-int   busca_ordenada(int n, int v[MAX], int x);
-int    busca_binaria(int n, int v[MAX], int x);
+int  busca_ordenada(int n, int v[MAX], int x);
+int   busca_binaria(int n, int v[MAX], int x);
+int busca_binaria_R(int esq, int dir, int v[MAX], int x);
 
 int main()
 {
@@ -43,5 +44,19 @@ int busca_binaria(int n, int v[MAX], int x)
             dir = meio;
     }
     return dir;
+}
+
+int busca_binaria_R(int esq, int dir, int v[MAX], int x)
+{
+    int meio;
+    if (esq == dir - 1)
+        return dir;
+    else {
+        meio = (esq + dir) / 2;
+        if (v[meio] < x)
+            return busca_binaria_R(meio, dir, v, x);
+        else
+            return busca_binaria_R(esq, meio, v, x);
+    }
 }
 
