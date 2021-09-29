@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define MAX 10
+#define MAX 100
 
 int fat(int n);
 int maximo(int n, int v[MAX]);
@@ -7,7 +7,28 @@ float q2(int k);
 
 int main()
 {
-    int 
+    int v[MAX];
+    int n, k;
+
+    // ler n
+    printf("Digite a quantidade de numeros a serem lidos : ");
+	scanf("%d", n);
+    
+    // ler k n vezes dentro de um laço para guardar no vetor v os k inteiros
+    int i;
+	for(i = 0; i <= n; i++)
+	{
+        scanf("%d", v[i]);
+	}
+	
+    // executar laço para ler n posições do vetor e executar a função recurvisa q2
+	for(i = 0; i <= n; i++)
+	{
+        printf("%d", v[i]);
+	}
+	
+
+
 
 }
 
@@ -31,7 +52,7 @@ float q2(int k)
         }
 
     }
-
+    return 0;
 }
 
 
