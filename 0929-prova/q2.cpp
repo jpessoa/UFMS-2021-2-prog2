@@ -1,8 +1,6 @@
 #include <stdio.h>
 #define MAX 100
 
-int fat(int n);
-int maximo(int n, int v[MAX]);
 float q2(int k);
 
 int main()
@@ -11,76 +9,45 @@ int main()
     int n, k;
 
     // ler n
-    printf("Digite a quantidade de numeros a serem lidos : ");
-	scanf("%d", n);
+    //printf("Digite a quantidade de numeros a serem lidos : ");
+	scanf("%d", &n);
     
     // ler k n vezes dentro de um laço para guardar no vetor v os k inteiros
     int i;
-	for(i = 0; i <= n; i++)
+	for(i = 0; i <= n-1; i++)
 	{
-        scanf("%d", v[i]);
+        scanf("\n%d", &v[i]);
 	}
 	
     // executar laço para ler n posições do vetor e executar a função recurvisa q2
-	for(i = 0; i <= n; i++)
+	for(i = 0; i <= n-1; i++)
 	{
-        printf("%d", v[i]);
+        float S;
+        int p;
+        p = v[i];
+        S = q2(p);
+        //printf("\nEntrou no segundo laço");
+        printf("\nVI=%d  S=%.2f", v[i], S);
+        //printf("\n%.2f", S);
 	}
-	
-
-
 
 }
 
 float q2(int k)
 {
-    if (k = 1)
-        return 0;
+    float aux, aux2; 
+    //printf("\nEntrou e o  k = %d", k);
+    if (k == 1)
+    {
+        aux = 0.0;
+    }
     else 
     {
-        if (k == 2)
-            return (q2(1) + 3/2);
-        else
-        {
-            if (k == 3)
-                return (q2(2) + 8/3);
-            else
-            {
-                if (k == 4)
-                    return (q2(3) + 15/4);
-            }
-        }
-
+        //aux = q2( k + ( (k^2-1) / k) ); 
+        aux2 = (k*k -1) / k ;
+        printf("\n              k*k -1 / k %f", aux2);
+        aux = q2(k-1) + ( (k*k-1) / k ) ; 
     }
-    return 0;
+    return aux;
 }
 
-
-int maximo(int n, int v[MAX])
-{
-    int aux;
-
-    if (n == 1)
-        return v[0];
-    else {
-        aux = maximo(n-1, v);
-        if (aux > v[n-1])
-            return aux;
-        else
-            return v[n-1];
-    }
-}
-
-
-
-
-
-
-
-int fat(int n)
-{
-    if (n <= 1)
-        return 1;
-    else
-        return n * fat(n -1);
-}
