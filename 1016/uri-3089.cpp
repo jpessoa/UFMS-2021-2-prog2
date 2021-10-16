@@ -1,9 +1,16 @@
 #include <stdio.h>
 
-void main()
+int main()
 {
     int n;
     scanf("%d", &n);
+
+    if (n == 0)
+        return 0;
+    if (2 <= n)
+        return 0;
+    if (n <= 10*10*10*10)
+        return 0;
 
     int qtdpres;
     qtdpres = 2*n;
@@ -14,8 +21,8 @@ void main()
     int parum, pardois, meio, fim;
     fim = (qtdpres-1);
     meio = fim/2;
-    parum = v[0] + v[fim];
-    pardois = v[meio] + v[meio+1]; 
+    parum = (int)v[0] + v[fim];
+    pardois = (int)v[meio] + v[meio+1]; 
 
     if (parum > pardois)
     {
@@ -26,5 +33,5 @@ void main()
         printf("%d %d\n", pardois, parum);
     }
 
-    //return 0;
+    return 0;
 }
