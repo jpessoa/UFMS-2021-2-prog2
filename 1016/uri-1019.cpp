@@ -6,21 +6,17 @@ int main()
 
     scanf("%d", &N);
     int hor, min, seg, temp;
-    if (N >= 3600)
-    {
-        hor = N / 3600;
-    }
-    else if (N >= 60)
-    {
-        min = N / 60;
-    }
-    else
-    {
-        seg = N - (min * 60);
-    }
+    temp = 0;
     
+    hor = (int)N / 3600;
+    printf("%d", hor);
+    temp = N - (hor * 3600);
+    
+    min = (int)temp / 60;
+    printf(":%d", min);
 
-    printf("H = %d M= %d S= %d", hor, min, seg);
-
+    seg = temp - (min * 60);
+    printf(":%d", seg);
+    
     return 0;
 }
