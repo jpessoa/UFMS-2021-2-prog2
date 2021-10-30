@@ -8,8 +8,6 @@ AS OPERACOES REALIZADAS NA LISTA SAO:
 #include "lista.h"
 #include <stdio.h>
 
-
-
 /**/
 int main()
 {
@@ -33,8 +31,8 @@ int main()
         }
         else if(op == 2)
         {
-            scanf("%d", &num);
-            remover(num, lista);
+            //scanf("%d", &num);
+            //remover(num, lista);
         }
         else if(op == 3)
         {
@@ -45,7 +43,6 @@ int main()
 
     /*apagar toda a lista encadeada alocada dinamicamente*/
     desalocar(lista);
-
 
     printf("Ponteiro apos desalocar a lista: %p\n", lista);
 
