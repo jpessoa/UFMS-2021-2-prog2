@@ -2,16 +2,14 @@
 #include "fila-med.h"
 #include <string.h>
 
-
-/*Função recebe um ponteiro para o inicio da fila, um ponteiro para o final da fila e o
+/*FunÃ§Ã£o recebe um ponteiro para o inicio da fila, um ponteiro para o final da fila e o
 elemento x que deseja inserir*/
 void enfileirar(char *s, pacientes *&i, pacientes *&f)
 {
     pacientes *nova;
 
-    nova = (pacientes *) calloc(1, sizeof (pacientes));
+    nova = (pacientes *) calloc(1, sizeof (pacientes)); // como usou calloc nÃ£o precisa inicialiar o prox
     strcpy(nova->nome, s);
-
     
     if(i == NULL)
         i = f = nova;
@@ -21,8 +19,7 @@ void enfileirar(char *s, pacientes *&i, pacientes *&f)
     }
 }
 
-
-/*Função recebe o ponteiro para o inicio da fila (e ponteiro para o ultimo no), remove o primeiro e imprime
+/*FunÃ§Ã£o recebe o ponteiro para o inicio da fila (e ponteiro para o ultimo no), remove o primeiro e imprime
  o valor do mesmo*/
 void desenfileirar(pacientes *&i, pacientes *&f)
 {
