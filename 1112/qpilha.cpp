@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include<stdlib.h>
+
 struct celula {
     int chave;
     struct celula *prox;
@@ -8,9 +10,11 @@ int desempilha(celula *&lst);
 
 int main()
 {
-    celula *t;
-    t = NULL;
+    celula *P;
+    P = NULL;
     printf("Hello World!\n");
+    empilha(5,P);
+    
 
   return 0;
 }
