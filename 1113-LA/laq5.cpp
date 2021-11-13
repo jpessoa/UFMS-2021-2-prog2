@@ -7,8 +7,9 @@ Lista avaliativa Ordenação e Eficiência de algoritmos
 #define MAX 100
 
 // prototipo
-void selection(int n, int v[MAX]);
+void quicksort(int p, int r, int v[MAX]);
 void imprime(int n, int v[MAX]);
+int separa(int p, int r, int v[MAX]);
 
 int main()
 {
@@ -25,7 +26,7 @@ int main()
     }
 
     // ordena vetor
-    selection(n, v);
+    quicksort(0, n - 1, v);
 
     // imprimir vetor
     imprime(n, v);
@@ -33,18 +34,13 @@ int main()
     return 0;
 }
 
-void selection(int n, int v[MAX])
+void quicksort(int p, int r, int v[MAX])
 {
-    int i, j, min, aux;
-
-    for (i = 0; i < n - 1; i++) {
-        min = i;
-        for (j = i+1; j < n; j++)
-        if (v[j] < v[min])
-            min = j;
-        aux = v[i];
-        v[i] = v[min];
-        v[min] = aux;
+    int q;
+    if (p < r){
+        q = separa(p, r, v);
+        quicksort(p, q, v);
+        quicksort(q+1, r, v);
     }
 }
 
@@ -57,13 +53,43 @@ void imprime(int n, int v[MAX])
     }
 }
 
+int separa(int p, int r, int v[MAX])
+{
+    int x, i, j, aux;
 
+    x = v[p];
+    i = p -1;
+    j = r + 1;
+    while (1) {
+        do {
+            j--;
+        } while (v[j] < x);
+        do {
+            i++;
+        } while (v[i] > x);
+        if (i < j)
+        {
+            //troca
+            aux = v[i];
+            v[i] = v[j];
+            v[j] = aux;
+        }
+        else
+            return j;
+    }
+}
 
 /*
-Faça a implementação do algoritmo ordenação por seleção para um vetor de números inteiros.
-    void selection(int n, int v[MAX]);
-Entrada: A primeira linha de um conjunto de teste contém um número inteiro positivo n(1 ≤ n ≤ 100) que indica o tamanho do vetor. 
-Em seguida são apresentados os n elementos do vetor.
+Escreva um programa que leia um vetor v com n elementos e ordene-o em ordem decrescente utilizando o método de ordenação por 
+separação (Quicksort). Considere n <= 100.
+Entrada: A entrada é composta por um número n de elementos, na primeira linha e, na segunda, são lidos os n elementos do vetor
 
-Saída: Para cada conjunto de teste da entrada seu programa deve produzir o vetor ordenado, seguido de uma linha em branco.
+5
+-1   5   10   7   4
+
+Saída: A saída é composta dos elementos do vetor v ordenado em ordem decrescente.
+
+10 7 5 4 -1
+ 
+Escreva um programa para testar sua função, respeitando o formato da entrada.
 */
