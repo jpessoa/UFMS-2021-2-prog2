@@ -7,8 +7,6 @@
 #include<stdio.h>  /*FILE, printf, scanf*/
 #define MAX 30
 
-
-
 int main()
 {
     FILE *arqent;
