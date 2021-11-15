@@ -2,7 +2,7 @@
 Trabalho Final de Prog2, aluno Jefferson E. Pessoa
 */
 
-//#include "listadupla.h"
+#include "arq_aux.h"
 #include <stdio.h>
 
 int main()
@@ -31,7 +31,8 @@ int main()
         }
         else if(op == 3)
         {
-            printf("\nEntrou na opção 3");
+//            printf("\nEntrou na opção 3");
+            op3_ler_arquivo_alunos();
         }
         else if(op == 4)
         {

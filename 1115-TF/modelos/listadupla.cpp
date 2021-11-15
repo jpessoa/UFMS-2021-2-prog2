@@ -4,7 +4,7 @@
 
 
 
-/*Funcao recebe o ponteiro para primeiro n— da lista e imprime todos os nos (celulas)
+/*Funcao recebe o ponteiro para primeiro nï¿½ da lista e imprime todos os nos (celulas)
 da lista*/
 void imprime_lista(celula *lst)
 {
