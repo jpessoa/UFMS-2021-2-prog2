@@ -2,7 +2,7 @@
 #include "fila-med.h"
 
 
-/*Função recebe um ponteiro para o inicio da fila, um ponteiro para o final da fila e o
+/*Funï¿½ï¿½o recebe um ponteiro para o inicio da fila, um ponteiro para o final da fila e o
 elemento x que deseja inserir*/
 void enfileirar(char *s, pacientes *&i, pacientes *&f)
 {
@@ -20,7 +20,7 @@ void enfileirar(char *s, pacientes *&i, pacientes *&f)
 }
 
 
-/*Função recebe o ponteiro para o inicio da fila (e ponteiro para o ultimo no), remove o primeiro e imprime
+/*Funï¿½ï¿½o recebe o ponteiro para o inicio da fila (e ponteiro para o ultimo no), remove o primeiro e imprime
  o valor do mesmo*/
 void desenfileirar(pacientes *&i, pacientes *&f)
 {
@@ -39,8 +39,6 @@ void desenfileirar(pacientes *&i, pacientes *&f)
         free(aux);
     }
 }
-
-
 
 
 char* desenfileirar2(pacientes *&i, pacientes *&f)
@@ -67,14 +65,6 @@ char* desenfileirar2(pacientes *&i, pacientes *&f)
         return str;
     }
 }
-
-
-
-
-
-
-
-
 
 
 /*Funcao que apaga todos os nos da lista L*/

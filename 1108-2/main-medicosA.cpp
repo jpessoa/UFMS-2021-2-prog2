@@ -5,7 +5,6 @@ int main()
 {
     int op;
     char nome[40];
-    
 
     pacientes *i1, *f1, *i2, *f2;
 
