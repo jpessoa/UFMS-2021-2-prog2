@@ -1,0 +1,11 @@
+Joao 5.08
+Mariana 5.08
+Scarlette 8.56
+Juliana 7.00
+Joaquim 8.23
+Ana 6.13
+Hudson 10.00
+Juliana 8.57
+Jefferson 10.00
+
+Alunos cadastrados = 9

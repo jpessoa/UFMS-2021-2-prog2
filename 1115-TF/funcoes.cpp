@@ -16,6 +16,7 @@ void op3_ler_arquivo_alunos()
     printf("\nDigite o nome do arquivo : ");
 
     FILE*  arq;             /* variavel para acessar um arquivo */
+    FILE*  saida;           /* variavel para escrita*/
     char nome_arq[MAX];     /* nome do arquivo a ser aberto*/
     char nome_alun[MAX];    /* nome do aluno */
     int rga, contador;
@@ -34,7 +35,9 @@ void op3_ler_arquivo_alunos()
     else
     {
         contador = 0;
-        printf("Arquivo foi aberto!\n\n");
+        //printf("Arquivo foi aberto!\n\n");
+
+        saida = fopen("media.txt", "w");
         
         /*Joao da Silva Santos 345678 2.3 4.5 9.0 2.0*/
         
@@ -58,6 +61,7 @@ void op3_ler_arquivo_alunos()
             }
             /*calcula da media e impressao na tela*/
             media = (0.35 * p1) + (0.35 * p2) + (0.3 * trab);
+            fprintf(saida, "%s %.2f\n", nome_alun, media);
             //printf("%s %.2f\n", nome_alun, media);
             //printf("\n%s %f %f %f %f %f", nome_alun, p1, p2, trab, po, media);
         
@@ -69,7 +73,9 @@ void op3_ler_arquivo_alunos()
         
         /*fechamento do arquivo*/
         printf("\nAlunos cadastrados = %d", contador);
+        fprintf(saida, "\nAlunos cadastrados = %d", contador);
         fclose(arq);
+        fclose(saida);
         
     }
     printf("\n");    
