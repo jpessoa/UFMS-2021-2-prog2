@@ -1,0 +1,9 @@
+Rearranje a seguinte lista de funções em ordem crescente de taxa de crescimento. Isto é, se a função g( n ) sucede imediatamente a 
+função f( n ) na sua lista, então é verdade que f( n ) = O( g( n ) ).
+
+Não basta informar a lista, é necessário provar a notação O (informar valores de c e n0).
+
+f1( n ) = n3 , f2( n ) = 3n−−√,  f3( n ) = 10n 
+
+OBS: Desenvolva a solução em papel, gere um PDF e anexe como resposta. Você também pode resolver em um arquivo do Word, 
+gerar um PDF depois e anexá-lo.

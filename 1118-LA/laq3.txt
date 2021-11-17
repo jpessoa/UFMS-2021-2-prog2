@@ -1,0 +1,9 @@
+Suponha que estamos comparando as implementações dos métodos de ordenação por trocas sucessivas e por intercalação em um mesmo computador. 
+Para entradas de tamanho n, o método das trocas sucessivas gasta 8n2 passos enquanto que o método da intercalação gasta 64n log n passos. 
+Para quais valores de n o método das trocas sucessivas é melhor que o método da intercalação?
+
+Se não for possível obter brevemente a resposta usando operações algébricas, crie um programa que mostre 3 valores (das duas funções), 
+próximos do menor valor de n e copie os valores aqui.
+
+Três valores antes de n e três valores após n.
+
