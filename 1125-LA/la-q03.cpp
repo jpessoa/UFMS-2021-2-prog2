@@ -1,4 +1,3 @@
-
 #include <stdio.h> 
 #include <stdlib.h>
 
@@ -35,14 +34,18 @@ void binario(int num)
 {
     celula *lista = NULL; 
     int aux;
+    if (num == 0){
+        inserir_inicio(num, lista);
+    }
 
     while (num > 0){
         aux = num % 2;
-        printf("%d", aux);
+        //printf("%d", aux);
         inserir_inicio(aux, lista);
         num = num /2;
     }
-    //imprimir(lista);  
+
+    imprimir(lista);  
 }
 
 void inserir_inicio(int n, celula* &lst)
@@ -73,7 +76,7 @@ void imprimir(celula *lst)
 {
     celula *p;
     for(p = lst; p != NULL; p = p->prox)
-        printf("%d ", p->chave);
+        printf("%d", p->chave);
 
 }
 
