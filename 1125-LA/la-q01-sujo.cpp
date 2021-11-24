@@ -1,5 +1,5 @@
-#include <stdio.h> 
-#include <stdlib.h>
+#include <stdio.h> /*printf*/
+#include <stdlib.h> /*malloc, calloc, free*/
 
 struct celula
 {
@@ -7,9 +7,14 @@ struct celula
     struct celula *prox;
 };
 
-void inserir_fim(int n, celula* &lst);
-void contar(celula *lst);
 void desalocar(celula* &L);
+void inserir_inicio(int n, celula* &lst);
+void remover(int x, celula* &lst);
+void inserir_fim(int n, celula* &lst);
+void imprimir(celula *lst);
+void somar(celula *lst);
+void contar(celula *lst);
+
 
 int main()
 {
@@ -34,6 +39,8 @@ int main()
     /*apagar toda a lista encadeada alocada dinamicamente*/
     desalocar(lista);
 
+    
+
     return 0;
 }
 
@@ -47,11 +54,36 @@ void contar(celula *lst)
     for(p = lst; p != NULL; p = p->prox)
     {
         cont++;
+        
     }
     printf("%d", cont);
+
 }
 
-//Funcao que insere dados no final da lista L
+/*Funcao imprime o campo chave armazenado em cada no da lista L*/
+void imprimir(celula *lst)
+{
+    celula *p;
+    for(p = lst; p != NULL; p = p->prox)
+        printf("%d ", p->chave);
+
+}
+
+/*Funcao soma o campo chave armazenado em cada no da lista L*/
+void somar(celula *lst)
+{
+    celula *p;
+    int soma;
+    soma = 0;
+
+    for(p = lst; p != NULL; p = p->prox)
+    {
+        soma = soma + p->chave;
+    }
+    printf("%d", soma);
+
+}
+
 void inserir_fim(int n, celula* &lst)
 {
     celula *novo, *p;
@@ -70,47 +102,6 @@ void inserir_fim(int n, celula* &lst)
         p->prox = novo;
     }
 }
-
-//Funcao que apaga todos os nos da lista L
-void desalocar(celula* &L)
-{
-    celula *aux;
-
-    while( L != NULL)
-    {
-        aux = L;
-        L = aux->prox;
-        free(aux);
-    }
-}
-
-/*
-
-//Funcao imprime o campo chave armazenado em cada no da lista L
-void imprimir(celula *lst)
-{
-    celula *p;
-    for(p = lst; p != NULL; p = p->prox)
-        printf("%d ", p->chave);
-
-}
-
-//Funcao soma o campo chave armazenado em cada no da lista L
-void somar(celula *lst)
-{
-    celula *p;
-    int soma;
-    soma = 0;
-
-    for(p = lst; p != NULL; p = p->prox)
-    {
-        soma = soma + p->chave;
-    }
-    printf("%d", soma);
-
-}
-
-
 
 
 void inserir_inicio(int n, celula* &lst)
@@ -145,8 +136,21 @@ void remover(int x, celula* &lst)
     }
 }
 
-*/
 
+//Funcao que apaga todos os nos da lista L
+void desalocar(celula* &L)
+{
+    celula *aux;
+
+    while( L != NULL)
+    {
+        aux = L;
+
+        L = aux->prox;
+
+        free(aux);
+    }
+}
 
 
 /*
