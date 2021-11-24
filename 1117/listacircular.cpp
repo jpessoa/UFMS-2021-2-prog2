@@ -6,7 +6,7 @@
 
 /*Funcao recebe um ponteiro para o  no da lista circular e o
 elemento x que deseja inserir*/
-void adicionar(char *s, celulaCirc *&cur)
+void adicionar(int *s, celulaCirc *&cur)
 {
     celulaCirc *nova;
 

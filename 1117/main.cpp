@@ -7,43 +7,51 @@ int main()
 {
     celulaCirc *cursor = NULL;/* ponteiro para um no' da lista circular*/
     int op;
+    char aux;
     char nome[MAX];
 
-    do
-    {   printf("\n 1 - Adicionar");
-        printf("\n 2 - Remover");
-        printf("\n 3 - AVANCAR");
-        printf("\n 4 - Sair");
-        printf("\n Opcao: ");
-        scanf("%d", &op);
+    printf("\n\n");
+    imprimir(cursor);
+        
+    adicionar("18", cursor);
+    printf("\n\n");
+    imprimir(cursor);
 
-        if(op == 1)
-        {
-            printf("\nAdicionar um novo nome:");
-            scanf(" %s", nome);
+    adicionar("37", cursor);
+    printf("\n\n");
+    imprimir(cursor);
 
-            adicionar(nome, cursor);
+    adicionar("24", cursor);
+    printf("\n\n");
+    imprimir(cursor);
 
+    avancar(cursor);
+    printf("\n\n");
+    imprimir(cursor);
 
-        }
-        else if(op == 2){
-            remover(cursor);
+    adicionar("42", cursor);
+    printf("\n\n");
+    imprimir(cursor);
 
+    adicionar("5", cursor);
+    printf("\n\n");
+    imprimir(cursor);
 
-        }
-        else if(op == 3)
-        {
+    avancar(cursor);
+    printf("\n\n");
+    imprimir(cursor);
 
-            if(cursor !=NULL)
-                cursor = avancar(cursor);
+    avancar(cursor);
+    printf("\n\n");
+    imprimir(cursor);
 
-        }
+    aux = remover(cursor);
+    printf("\n\n");
+    imprimir(cursor);
 
-        printf("\n\n");
-        imprimir(cursor);
-        printf("\n\n");
-
-    }while(op != 4);
+    avancar(cursor);  
+    printf("\n\n");
+    imprimir(cursor);
 
     /*desalocar lista*/
     desalocar(cursor);

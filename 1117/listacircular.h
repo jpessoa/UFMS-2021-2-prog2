@@ -5,7 +5,7 @@
 
 
  struct celulaCirc{
-    char nome[MAX];
+    int nome[MAX];
     struct celulaCirc *prox;
 };
 
