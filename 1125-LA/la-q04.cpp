@@ -1,15 +1,75 @@
+#include <stdio.h> 
+#include <stdlib.h>
+
+struct celula{
+     char nome[31];
+     struct celula *prox;
+};
+
+celula* interseccao(celula *L1, celula *L2);
+
+void inserir_fim(int n, celula* &lst);
+void imprimir(celula *lst);
+
+int main()
+{
+    celula *L1 = NULL;  /*lista sem cabeca vazia*/
+
+    char nom[31];
+  
+    scanf(" %s", &nom);
+    while(nom != "FIM")
+    {
+        inserir_fim(nom, L1);
+        scanf(" %s", &nom);
+    }
+
+    imprimir(L1);
+    
+    printf("\n");
+
+    return 0;
+}
+
+void inserir_fim(char nom[31], celula* &lst)
+{
+    celula *nova, *p;
+
+    nova = (celula*) malloc(sizeof(celula));
+    nova->nome = &nom;
+    nova->prox = NULL;
+
+    if(lst == NULL)
+        lst = nova;
+    else{
+        p = lst;
+        while(p->prox != NULL)
+            p = p->prox;
+
+        p->prox = nova;
+    }
+}
+
+//Funcao imprime o campo chave armazenado em cada no da lista L
+void imprimir(celula *lst)
+{
+    celula *p;
+    for(p = lst; p != NULL; p = p->prox)
+        printf("%s", p->nome);
+
+}
+
 /*
 Considerando o tipo struct definido abaixo para as listas encadeadas neste exercício.
 
 struct celula{
-
      char nome[31];
-
      struct celula *prox;
-
 };
 
-Construa uma lista L3 que corresponde à intersecção de duas listas L1 e L2 simplesmente encadeadas. Crie uma função com o protótipo abaixo para realizar a intersecção das listas. A função retorna o ponteiro para a lista L3 criada.
+Construa uma lista L3 que corresponde à intersecção de duas listas L1 e L2 simplesmente encadeadas. 
+Crie uma função com o protótipo abaixo para realizar a intersecção das listas. 
+A função retorna o ponteiro para a lista L3 criada.
 
 celula* interseccao(celula *L1, celula *L2);
 
