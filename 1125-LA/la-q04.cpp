@@ -1,5 +1,8 @@
 #include <stdio.h> 
 #include <stdlib.h>
+#include <string.h>
+
+#define MAX 31
 
 struct celula{
      char nome[31];
@@ -7,21 +10,20 @@ struct celula{
 };
 
 celula* interseccao(celula *L1, celula *L2);
-
-void inserir_fim(int n, celula* &lst);
+void inserir_fim(char *nom, celula* &lst);
 void imprimir(celula *lst);
 
 int main()
 {
     celula *L1 = NULL;  /*lista sem cabeca vazia*/
 
-    char nom[31];
+    char nome[MAX];
   
-    scanf(" %s", &nom);
-    while(nom != "FIM")
+    scanf(" %s", &nome);
+    while(nome != "FIM")
     {
-        inserir_fim(nom, L1);
-        scanf(" %s", &nom);
+        inserir_fim(nome, L1);
+        scanf(" %s", &nome);
     }
 
     imprimir(L1);
@@ -31,12 +33,12 @@ int main()
     return 0;
 }
 
-void inserir_fim(char nom[31], celula* &lst)
+void inserir_fim(char *nome, celula* &lst)
 {
     celula *nova, *p;
 
     nova = (celula*) malloc(sizeof(celula));
-    nova->nome = &nom;
+    nova->nome = nome;
     nova->prox = NULL;
 
     if(lst == NULL)
