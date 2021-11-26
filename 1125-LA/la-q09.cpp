@@ -1,3 +1,126 @@
+#include <stdio.h> 
+#include <stdlib.h>
+
+struct celula
+{
+    int chave;
+    struct celula *prox;
+};
+
+void inserir_fim(int n, celula* &lst);
+void imprimir(celula *lst);
+void desalocar(celula* &L);
+void uniao (celula *&L1, celula *&L2, celula *&L3);
+int pesquisa(int n, celula* &lst);
+
+int main()
+{
+     celula *L1 = NULL;  /*lista sem cabeca vazia*/
+     celula *L2 = NULL;  /*lista sem cabeca vazia*/
+     celula *L3 = NULL;  /*lista sem cabeca vazia*/
+
+     int num;
+  
+     scanf("%d", &num);
+     while(num > 0)
+     {
+          inserir_fim(num, L1);
+          scanf("%d", &num);
+     }
+    
+     scanf("%d", &num);
+     while(num > 0)
+     {
+          inserir_fim(num, L2);
+          scanf("%d", &num);
+     }
+    
+     uniao (L1, L2, L3);
+     imprimir(L3);
+    
+     printf("\n");
+
+     /*apagar toda a lista encadeada alocada dinamicamente*/
+     desalocar(L1);
+
+     return 0;
+}
+
+
+//Funcao que insere dados no final da lista L
+void inserir_fim(int n, celula* &lst)
+{
+    celula *novo, *p;
+
+    novo = (celula*) malloc(sizeof(celula));
+    novo->chave = n;
+    novo->prox = NULL;
+
+    if(lst == NULL)
+        lst = novo;
+    else{
+        p = lst;
+        while(p->prox != NULL)
+            p = p->prox;
+
+        p->prox = novo;
+    }
+}
+
+//Funcao que apaga todos os nos da lista L
+void desalocar(celula* &L)
+{
+    celula *aux;
+
+    while( L != NULL)
+    {
+        aux = L;
+        L = aux->prox;
+        free(aux);
+    }
+}
+
+//Funcao imprime o campo chave armazenado em cada no da lista L
+void imprimir(celula *lst)
+{
+     celula *p;
+
+     for(p = lst; p != NULL; p = p->prox){
+          printf("%d ", p->chave);
+     }
+}
+
+void uniao (celula *&L1, celula *&L2, celula *&L3)
+{
+     celula *p;
+     bool jatem;
+
+     for(p = L1; p != NULL; p = p->prox){
+          inserir_fim(p->chave, L3);
+     }
+     for(p = L2; p != NULL; p = p->prox){
+          //verificar se p->chave não existe em L3
+          jatem = pesquisa(p->chave, L3);
+          if(jatem == 0){
+               inserir_fim(p->chave, L3);
+          }
+     }
+}
+
+int pesquisa(int n, celula* &lst)
+{
+     celula *p;
+
+     for(p = lst; p != NULL; p = p->prox){
+          if (n == p->chave)
+          {
+               return 1;
+          }
+     return 0;
+     }
+}
+
+
 /*
 Considerando o tipo struct definido abaixo para as listas encadeadas neste exercício.
 
