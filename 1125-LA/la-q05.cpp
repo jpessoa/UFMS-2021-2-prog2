@@ -1,6 +1,7 @@
 #include <stdio.h>
 #define MAX 20
 
+/*  BUGADO  */
 
 /*
 Dada uma lista encadeada escreva uma função que a copie em um vetor. 

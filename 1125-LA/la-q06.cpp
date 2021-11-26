@@ -1,6 +1,8 @@
 #include <stdio.h> 
 #include <stdlib.h>
 
+/*  BUGADO  */
+
 struct celula
 {
     int chave;
@@ -104,9 +106,9 @@ void verificarepitido(int n, celula* &lst)
     celula *p2;
     //int n;
     for(p2 = lst; p2 != NULL; p2 = p2->prox){
-        if (p2->chave == n)
-            printf("\nRepetido %d", p2->chave);
-        else{
+        if (p2->chave != n){
+            //printf("\nRepetido %d", p2->chave);
+        //else{
             printf("\nNão repetido %d", p2->chave);
         }
     }
