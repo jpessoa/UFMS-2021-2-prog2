@@ -1,3 +1,8 @@
+/*
+
+>>>>> OK <<<<<
+
+*/
 #include <stdio.h> 
 #include <stdlib.h>
 
@@ -15,9 +20,9 @@ int pesquisa(int n, celula* &lst);
 
 int main()
 {
-     celula *L1 = NULL;  /*lista sem cabeca vazia*/
-     celula *L2 = NULL;  /*lista sem cabeca vazia*/
-     celula *L3 = NULL;  /*lista sem cabeca vazia*/
+     celula *L1 = NULL;  
+     celula *L2 = NULL;  
+     celula *L3 = NULL;  
 
      int num;
   
@@ -40,14 +45,11 @@ int main()
     
      printf("\n");
 
-     /*apagar toda a lista encadeada alocada dinamicamente*/
      desalocar(L1);
 
      return 0;
 }
 
-
-//Funcao que insere dados no final da lista L
 void inserir_fim(int n, celula* &lst)
 {
     celula *novo, *p;
@@ -67,7 +69,6 @@ void inserir_fim(int n, celula* &lst)
     }
 }
 
-//Funcao que apaga todos os nos da lista L
 void desalocar(celula* &L)
 {
     celula *aux;
@@ -80,7 +81,6 @@ void desalocar(celula* &L)
     }
 }
 
-//Funcao imprime o campo chave armazenado em cada no da lista L
 void imprimir(celula *lst)
 {
      celula *p;
@@ -116,8 +116,8 @@ int pesquisa(int n, celula* &lst)
           {
                return 1;
           }
-     return 0;
      }
+     return 0;
 }
 
 

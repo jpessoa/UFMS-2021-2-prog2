@@ -2,79 +2,69 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define MAX 31
+
 struct celula{
      char nome[31];
      struct celula *prox;
 };
 
+celula* interseccao(celula *L1, celula *L2);
 void inserir_fim(char *nom, celula* &lst);
 void imprimir(celula *lst);
-void desalocar(celula* &L);
 
 int main()
 {
-    celula *L1 = NULL;  
+    celula *L1 = NULL;  /*lista sem cabeca vazia*/
 
     char nome;
   
-    scanf("%s ", &nome);
-    //while(num != 0)
+    scanf(" %s", &nome);
+
     while(strcmp(&nome, "FIM") != 0)
     {
         inserir_fim(&nome, L1);
-        scanf("%s ", &nome);
+        scanf(" %s", &nome);
     }
 
-    imprimir(L1);
-   
+    //imprimir(L1);
+    
     printf("\n");
-
-    desalocar(L1);
 
     return 0;
 }
 
-//Funcao que insere dados no final da lista L
-void inserir_fim(char *nom, celula* &lst)
+void inserir_fim(char *nome, celula* &lst)
 {
-    celula *novo, *p;
+    celula *nova, *p;
 
-    novo = (celula*) malloc(sizeof(celula));
-    //novo->chave = n;
-    strcpy(nom, novo->nome);
-    novo->prox = NULL;
+    nova = (celula*) malloc(sizeof(celula));
+    //nova->nome = nome;
+    strcpy(nome, nova->nome);
+
+    nova->prox = NULL;
 
     if(lst == NULL)
-        lst = novo;
+        lst = nova;
     else{
         p = lst;
         while(p->prox != NULL)
             p = p->prox;
 
-        p->prox = novo;
+        p->prox = nova;
     }
 }
 
+//Funcao imprime o campo chave armazenado em cada no da lista L
 void imprimir(celula *lst)
 {
     celula *p;
     for(p = lst; p != NULL; p = p->prox)
-        printf("%s ", p->nome);
+        printf("%s", p->nome);
 
 }
 
-//Funcao que apaga todos os nos da lista L
-void desalocar(celula* &L)
-{
-    celula *aux;
 
-    while( L != NULL)
-    {
-        aux = L;
-        L = aux->prox;
-        free(aux);
-    }
-}
 
 /*
 Considerando o tipo struct definido abaixo para as listas encadeadas neste exercício.

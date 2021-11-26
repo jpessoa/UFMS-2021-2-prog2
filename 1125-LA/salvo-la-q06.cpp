@@ -1,10 +1,7 @@
-/*
-
->>>>> OK <<<<<
-
-*/
 #include <stdio.h> 
 #include <stdlib.h>
+
+/*  BUGADO  */
 
 struct celula
 {
@@ -13,12 +10,14 @@ struct celula
 };
 
 void inserir_fim(int n, celula* &lst);
-void contar(celula *lst);
+void imprimir(celula *lst);
+void verificarepitido(int n, celula* &lst);
 void desalocar(celula* &L);
 
 int main()
 {
     celula *lista = NULL;  /*lista sem cabeca vazia*/
+    celula *lista2 = NULL;  /*lista sem cabeca vazia*/
 
     int num;
   
@@ -32,7 +31,7 @@ int main()
         scanf("%d", &num);
     }
 
-    contar(lista);
+    imprimir(lista);
     
     printf("\n");
 
@@ -89,16 +88,35 @@ void desalocar(celula* &L)
     }
 }
 
-/*
-
 //Funcao imprime o campo chave armazenado em cada no da lista L
 void imprimir(celula *lst)
 {
     celula *p;
-    for(p = lst; p != NULL; p = p->prox)
-        printf("%d ", p->chave);
+    int n;
+    for(p = lst; p != NULL; p = p->prox){
+        //printf("\n>>%d ", p->chave);
+        n = p->chave;
+        verificarepitido(n, lst);
+    }
 
 }
+
+void verificarepitido(int n, celula* &lst)
+{
+    celula *p2;
+    //int n;
+    for(p2 = lst; p2 != NULL; p2 = p2->prox){
+        if (p2->chave != n){
+            //printf("\nRepetido %d", p2->chave);
+        //else{
+            printf("\nNão repetido %d", p2->chave);
+        }
+    }
+        
+
+}
+
+/*
 
 //Funcao soma o campo chave armazenado em cada no da lista L
 void somar(celula *lst)
@@ -153,19 +171,19 @@ void remover(int x, celula* &lst)
 */
 
 
-
 /*
-Escreva uma função que conte o número de células de uma lista linear encadeada.
+Dada uma lista encadeada construa uma função que recebe uma lista encadeada de números inteiros e retorna 
+uma lista sem repetições, ou seja, uma lista onde cada número apareça apenas uma vez. 
+Imprima a lista resultante.
 
-Entrada: A entrada é composta dos valores a inserir na lista na ordem em que aparecem, 
-sendo que o número 0 finaliza a entrada.
+Entrada: A entrada é composta dos valores a serem inseridos na lista na ordem em que aparecem, sendo 
+que o número 0 finaliza a entrada.
 
-1 5 8 7 23 98 42 31 14 33 0
+12 5 -7 8 5 9 12 1 8 0
 
-Saída: A saída representa o número de células da lista.
+Saída: A saída é a impressão da lista resultante sem repetições.
 
-10
+12 5 -7 8 9 1
 
-Crie um programa para testar sua função respeitando o formato da entrada e da saída.
-
+Escreva um programa para testar sua função respeitando o formato da entrada e saída.
 */
