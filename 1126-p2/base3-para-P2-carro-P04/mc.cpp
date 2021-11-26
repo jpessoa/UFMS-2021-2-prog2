@@ -15,7 +15,7 @@ tipomarca* buscarMarca(tipomarca* M, char *s)
 }
 
 /*funcao insere uma nova marca na lista*/
-void inserirMarca(tipomarca *&, int cmarca, char nom*)
+void inserirMarca(tipomarca *&, int cmarca, char *nom)
 {
     tipomarca* novo = (tipomarca*) calloc (1, sizeof(tipomarca));
     novo->codmarca = cmarca;
