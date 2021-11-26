@@ -61,6 +61,8 @@ void imprimir(celula *lst)
 
 }
 
+
+
 /*
 Considerando o tipo struct definido abaixo para as listas encadeadas neste exercício.
 
