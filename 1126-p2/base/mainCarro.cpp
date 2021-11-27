@@ -1,6 +1,10 @@
+/*
+Jefferson Eduardo Pessoa
+RGA 2021.1907.010-2
+*/
+
 #include<stdio.h>
 #include "mc.h"
-
 
 /*funcao main*/
 int main()
@@ -25,7 +29,7 @@ int main()
             scanf(" %[^\n]", &nom);
             inserirMarca(L, cmarca, &nom);
             //printf("");
-            listarMarca(L);
+            //listarMarca(L);
         }
         else if(op == 2)
         {

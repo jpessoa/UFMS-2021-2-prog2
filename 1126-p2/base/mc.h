@@ -26,6 +26,8 @@ struct tipocarro
 
 tipomarca* buscarMarca(tipomarca* , char*);
 
+tipocarro* inserirCarro(tipocarro*, int codcarro , int codmarca);
+
 void inserirMarca(tipomarca*&, int cmarca, char *nom);
 
 void inserirMarcaFim(tipomarca*&, int cmarca, char *nom);
