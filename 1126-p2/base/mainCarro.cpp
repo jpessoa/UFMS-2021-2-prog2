@@ -1,25 +1,31 @@
 #include<stdio.h>
+#include "mc.h"
 
 
 /*funcao main*/
 int main()
 {
     int op;
-    
-    
+    tipomarca *L = NULL;
+    int cmarca;
+    char nom;
     
     do
     {
         printf("\n1 - Cadastrar marca");
         printf("\n2 - Cadastrar carro");
-        printf("\n3 - ");
+        printf("\n3 - Remover último carro");
         printf("\n4 - Sair");
         printf("\nOpcao: ");
         scanf("%d", &op);
         
         if(op == 1)
         {
-            
+            scanf("%d", &cmarca);
+            scanf(" %[^\n]", &nom);
+            inserirMarca(L, cmarca, &nom);
+            //printf("");
+            listarMarca(L);
         }
         else if(op == 2)
         {

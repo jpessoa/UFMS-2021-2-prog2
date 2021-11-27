@@ -10,8 +10,9 @@ struct tipomarca
       int codmarca;
       char nome[TAM];
       struct tipomarca *prox;
-};
+      struct tipomarca *ant;
 
+};
 
 /*tipo struct para carro */
 struct tipocarro
@@ -19,13 +20,15 @@ struct tipocarro
     int codmarca;   // codigo da marca do carro
     int codcarro;   // codigo do carro
     struct tipocarro *prox;
+    struct tipocarro *ant;
+
 };
-
-
 
 tipomarca* buscarMarca(tipomarca* , char*);
 
-void inserirMarca (tipomarca *&, int, char*);
+void inserirMarca(tipomarca*&, int cmarca, char *nom);
+
+void inserirMarcaFim(tipomarca*&, int cmarca, char *nom);
 
 void listarMarca(tipomarca* );
 
